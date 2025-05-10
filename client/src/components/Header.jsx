@@ -1,6 +1,5 @@
 import { useState } from "react";
 import logo from "../assets/logo.png";
-import Search from "./Search";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { BsCart4 } from "react-icons/bs";
@@ -11,6 +10,7 @@ import UserMenu from "./UserMenu";
 import { DisplayPriceInUSD } from "../utils/DisplayPriceInUs";
 import { useGlobalContext } from "../provider/GlobalProvider";
 import DisplayCartItem from "./DisplayCartItem";
+import Search from "./Search";
 
 const Header = () => {
   const [isMobile] = useMobile();
