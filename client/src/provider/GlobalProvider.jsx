@@ -13,7 +13,7 @@ export const GlobalContext = createContext(null);
 
 export const useGlobalContext = () => useContext(GlobalContext);
 
-export const GlobalProvider = ({ children }) => {
+const GlobalProvider = ({ children }) => {
   const dispatch = useDispatch();
   const [totalPrice, setTotalPrice] = useState(0);
   const [notDiscountTotalPrice, setNotDiscountTotalPrice] = useState(0);
@@ -33,7 +33,7 @@ export const GlobalProvider = ({ children }) => {
         dispatch(handleAddItemCart(responseData.data));
       }
     } catch (error) {
-      AxiosToastError(error);
+      console.log(error);
     }
   };
 
@@ -114,7 +114,7 @@ export const GlobalProvider = ({ children }) => {
         dispatch(handleAddAddress(responseData.data));
       }
     } catch (error) {
-      AxiosToastError(error);
+      // AxiosToastError(error);
     }
   };
 
@@ -128,7 +128,8 @@ export const GlobalProvider = ({ children }) => {
         dispatch(setOrder(responseData.data));
       }
     } catch (error) {
-      AxiosToastError(error);
+      // AxiosToastError(error);
+      console.log(error);
     }
   };
 
